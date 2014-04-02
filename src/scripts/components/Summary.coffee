@@ -1,5 +1,6 @@
 `/** @jsx React.DOM */`
 
+Chart = require("./Chart.coffee")
 
 Summary = React.createClass
   render: ->
@@ -21,13 +22,7 @@ Summary = React.createClass
             </div>
           </div>
           <div className="col-md-6 col-sm-6">
-            <div className="sect">
-              <h4>Break-up of Total Payment</h4>
-              <img src="http://placehold.it/200x200"/>
-              <div className="sect">
-                <h4>Principal Interest</h4>
-              </div>
-            </div>
+            <Chart />
           </div>
         </div>
       </div>
