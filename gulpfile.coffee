@@ -21,7 +21,7 @@ if gulp.env.production  # i.e. we were executed with a --production option
 sassConfig = { includePaths : ['src/styles'] }
 httpPort = 4000
 # paths to files in bower_components that should be copied to dist/assets/vendor
-vendorPaths = ['es5-shim/es5-sham.js', 'es5-shim/es5-shim.js', 'bootstrap/dist/css/bootstrap.css']
+vendorPaths = ['es5-shim/es5-sham.js', 'es5-shim/es5-shim.js']
 
 #
 # TASKS
@@ -33,11 +33,18 @@ gulp.task 'clean', ->
 
 # main.scss should @include any other CSS you want
 gulp.task 'sass', ->
-  gulp.src('src/styles/main.scss')
+  gulp.src('src/styles/*.scss')
   .pipe(sass(sassConfig).on('error', gutil.log))
   .pipe(if gulp.env.production then minifyCSS() else gutil.noop())
   .pipe(if gulp.env.production then rev() else gutil.noop())
   .pipe(gulp.dest('dist/assets'))
+
+gulp.task 'css', ->
+  gulp.src('src/styles/*.css')
+  .pipe(if gulp.env.production then minifyCSS() else gutil.noop())
+  .pipe(if gulp.env.production then rev() else gutil.noop())
+  .pipe(gulp.dest('dist/assets'))
+
 
 # Some JS and CSS files we want to grab from Bower and put them in a dist/assets/vendor directory
 # For example, the es5-sham.js is loaded in the HTML only for IE via a conditional comment.
@@ -48,7 +55,7 @@ gulp.task 'vendor', ->
 
 # Just copy over remaining assets to dist. Exclude the styles and scripts as we process those elsewhere
 gulp.task 'copy', ->
-  gulp.src(['src/**/*', '!src/scripts', '!src/scripts/**/*', '!src/styles', '!src/styles/**/*']).pipe(gulp.dest('dist'))
+  gulp.src(['src/**/*', '!src/scripts', '!src/scripts/**/*', '!src/styles', '!src/styles/*']).pipe(gulp.dest('dist'))
 
 # This task lets Webpack take care of all the coffeescript and JSX transformations, defined in webpack.config.js
 # Webpack also does its own uglification if we are in --production mode
@@ -68,7 +75,7 @@ gulp.task 'dev', ['build'], ->
         files: [evt.path]
 
 
-gulp.task 'build', ['webpack', 'sass', 'copy', 'vendor'], ->
+gulp.task 'build', ['webpack', 'sass', 'copy', 'css', 'vendor'], ->
 gulp.task 'default', ['build'], ->
   # Give first-time users a little help
   setTimeout ->

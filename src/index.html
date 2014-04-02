@@ -5,28 +5,70 @@
 <!--[if IE 9 ]>    <html class="ie ie9 ie-lt10 no-js" lang="en"> <![endif]-->
 <!--[if gt IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
 
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <title>React Starter Template</title>
-  <meta name="title" content="" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="assets/vendor/bootstrap.css" />
-  <link rel="stylesheet" href="assets/main.css" />
+
+<html><head>
+<!-- Title here -->
+<title>EMI Calculator</title>
+<!-- Description, Keywords and Author -->
+<meta name="description" content="Your description">
+<meta name="keywords" content="Your,Keywords">
+<meta name="author" content="">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Styles -->
+<!-- Bootstrap CSS -->
+<link href="assets/bootstrap.css" rel="stylesheet">
+<!-- Font awesome CSS -->
+<link href="assets/font-awesome.min.css" rel="stylesheet">		
+<!-- Custom CSS -->
+<link href="assets/style.css" rel="stylesheet">
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="#">
   <!--[if lte IE 8]>
     <script src="assets/vendor/es5-shim.js"></script>
     <script src="assets/vendor/es5-sham.js"></script>
   <![endif]-->
+
 </head>
+
 <body>
   <!--[if lt IE 8]>
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
-  <div id="app">
-    <p>If you can see this, something is broken (or JS is not enabled)..</p>
+
+
+<div class="container">
+  <div class="main">
+    <div class="row">
+      <div class="col-md-2">
+
+        <div class="sidebar">
+          <!-- Project name -->
+          <h3>React Demo</h3>
+          <ul>
+            <li><a href="#home"></a></li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="col-md-10">
+        <div id="emi">
+          <`0`>
+        </div>
+      </div>
+      <br>
+    </div>
+    <div class="footer text-center">
+      Copyright 2013 - <a href="http://cuberoot.in">Cube Root</a>
+    </div>
   </div>
+</div>
+
+
   <script type="text/javascript" src="assets/main.js"></script>
+  <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+
 </body>
 </html>

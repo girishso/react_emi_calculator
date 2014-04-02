@@ -4,7 +4,7 @@
 require("script!react/react-with-addons.js")
 require("script!jquery/jquery.js")
 
-StarterApp = require("./components/StarterApp.coffee")
+StarterApp = require("./components/EMICalculator.coffee")
 
-React.renderComponent(`<StarterApp />`, document.getElementById('app'))
+React.renderComponent(`<StarterApp />`, document.getElementById('emi'))
 
