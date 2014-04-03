@@ -13,17 +13,19 @@ class EMI
     ret
 
   amortization_schedule: ->
-    a = @N
+    a = 0
     P = @P
     monthly_emi = @monthly_emi()
 
-    while a > 0
+    while a < @N
       ret = {}
-      a--
+      ret.month = a + 1
       ret.interest = Math.round P * @J, 4
       ret.principal = Math.round monthly_emi - ret.interest, 4
       ret.balance = Math.round P - ret.principal, 4
+      ret.loan_paid = (100 * (@P - ret.balance)) / @P
       P = ret.balance
+      a++
       ret
 
   monthly_emi: () ->
