@@ -37,3 +37,18 @@ _round = Math.round
 Math.round = (number, decimals) -> # optional, default 0
   multiplier = Math.pow(10, decimals)
   _round(number * multiplier) / multiplier
+
+Number::round = (decimals=0) ->
+  Math.round this, decimals
+
+Number::format_rupees = () ->
+  x = @toString()
+  afterPoint = ""
+  afterPoint = x.substring(x.indexOf("."), x.length)  if x.indexOf(".") > 0
+  x = Math.floor(x)
+  x = x.toString()
+  lastThree = x.substring(x.length - 3)
+  otherNumbers = x.substring(0, x.length - 3)
+  lastThree = "," + lastThree  unless otherNumbers is ""
+  res = otherNumbers.replace(/\B(?=(\d{2})+(?!\d))/g, ",") + lastThree + afterPoint
+
