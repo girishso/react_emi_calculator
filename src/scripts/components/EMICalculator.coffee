@@ -3,6 +3,7 @@
 EMIForm = require("./EMIForm.coffee")
 Summary = require("./Summary.coffee")
 Amortization = require("./Amortization.coffee")
+EMI = require "../EMI.coffee"
 
 EMICalculator = React.createClass
   render: ->
@@ -13,7 +14,7 @@ EMICalculator = React.createClass
             <div className="col-md-8 col-sm-8">
               <div className="is">
                 <EMIForm />
-                <Summary />
+                <Summary summary={new EMI(2500000, 10.5, 240).summary()} />
               </div>
 
             </div>
