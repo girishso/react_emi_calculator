@@ -7,7 +7,7 @@ EMI = require "../EMI.coffee"
 
 EMICalculator = React.createClass
   render: ->
-    emi = new EMI(2500000, 10.5, 240)
+    emi = @props.emi
 
     `(
     <div className="mainbar">

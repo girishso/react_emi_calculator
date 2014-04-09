@@ -4,10 +4,11 @@
 require("script!react/react-with-addons.js")
 require("script!jquery/jquery.js")
 
-StarterApp = require("./components/EMICalculator.coffee")
+window.EMICalculator = require("./components/EMICalculator.coffee")
+Chart = require("./components/Chart.coffee")
 EMI = require("./EMI.coffee")
 
-emi = new EMI(2500000, 10.5, 240)
+emi = new EMI(1500000, 7.75, 240)
 m = emi.summary()
 console.log m
 sc = emi.amortization_schedule()
@@ -15,5 +16,5 @@ console.log sc
 
 
 
-React.renderComponent(`<StarterApp />`, document.getElementById('emi'))
+React.renderComponent(`<EMICalculator emi={emi} />`, document.getElementById('emi'))
 
