@@ -2,6 +2,8 @@
 
 A test app to learn React JS.
 
+[Demo](http://girishso.github.io/react_emi_calculator/dist/)
+
 ## Up and Running
 
 ```
