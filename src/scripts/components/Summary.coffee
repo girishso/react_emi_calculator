@@ -24,7 +24,7 @@ Summary = React.createClass
             </div>
           </div>
           <div className="col-md-6 col-sm-6">
-            <Chart />
+            <Chart total_interest={props.summary.total_interest} total_payment={props.summary.total_payment} />
           </div>
         </div>
       </div>

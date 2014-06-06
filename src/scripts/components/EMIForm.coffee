@@ -25,7 +25,7 @@ EMIForm = React.createClass
             <div className="form-group">
               <label className="control-label col-md-3" htmlFor="interest">Interest Rate (%)</label>
               <div className="col-md-4">
-                <input type="text" className="form-control" onChange={this.handleChange} ref="interest" name="interest" defaultValue ="7.75"/>
+                <input type="text" className="form-control" onChange={this.handleChange} ref="interest" name="interest" defaultValue ="12.75"/>
               </div>
             </div>
             <div className="form-group">
