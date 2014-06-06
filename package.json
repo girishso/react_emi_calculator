@@ -1,8 +1,8 @@
 {
-  "author": "Johh Lynch",
-  "name": "react-starter-template",
+  "author": "Girish Sonawane",
+  "name": "EMI Calculator",
   "version": "1.0.0",
-  "homepage": "http://www.rigelgroupllc.com",
+  "homepage": "http://www.cuberoot.in",
   "dependencies": {},
   "devDependencies": {
     "gulp": "~3.5.2",
