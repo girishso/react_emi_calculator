@@ -12,15 +12,15 @@ Summary = React.createClass
           <div className="col-md-6 col-sm-6">
             <div className="sect">
               <h4>Monthly Payment</h4>
-              <h3>₹ {(props.summary.monthly_emi).round().format_rupees()}</h3>
+              <h3>&#8377; {(props.summary.monthly_emi).round().format_rupees()}</h3>
             </div>
             <div className="sect">
               <h4>Total Interest Payable</h4>
-              <h3>₹ {(props.summary.total_interest).round().format_rupees()}</h3>
+              <h3>&#8377; {(props.summary.total_interest).round().format_rupees()}</h3>
             </div>
             <div className="sect">
               <h4>Total Payment (Principal + Interest)</h4>
-              <h3>₹ {(props.summary.total_payment).round().format_rupees()}</h3>
+              <h3>&#8377; {(props.summary.total_payment).round().format_rupees()}</h3>
             </div>
           </div>
           <div className="col-md-6 col-sm-6">

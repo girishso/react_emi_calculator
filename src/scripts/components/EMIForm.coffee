@@ -17,7 +17,7 @@ EMIForm = React.createClass
         <div className="form">
           <form className="form-horizontal">
             <div className="form-group">
-              <label className="control-label col-md-3" htmlFor="name">Amount (₹)</label>
+              <label className="control-label col-md-3" htmlFor="name">Amount (&#8377;)</label>
               <div className="col-md-4">
                 <input type="text" className="form-control" onChange={this.handleChange} ref="amount" name="amount" defaultValue="1500000"/>
               </div>

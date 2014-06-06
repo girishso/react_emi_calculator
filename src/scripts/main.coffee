@@ -10,9 +10,7 @@ EMI = require("./EMI.coffee")
 
 emi = new EMI(1500000, 12.75, 240)
 m = emi.summary()
-console.log m
 sc = emi.amortization_schedule()
-console.log sc
 
 
 
